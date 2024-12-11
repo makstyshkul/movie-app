@@ -1,0 +1,11 @@
+<div class="movie-card">
+	<img [src]="movie.backdrop_path" alt=`{{movie.title}}` class="movie-image">
+	<div class="movie-details">
+		<h2>{{movie.title}}</h2>
+		<p>{{movie.overwiew}}</p>
+		<p>Дата випуску: {{movie.release_date}}</p>
+		<p>Рейтинг: {{movie.rating}}</p>
+		<button (click)="addToFavorites()">Додати до улюблених</button>
+		<button (click)="addToWatchList()">Додати до списку перегляду</button>
+	</div>
+</div>
