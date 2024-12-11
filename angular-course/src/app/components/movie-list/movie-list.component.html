@@ -1,0 +1,17 @@
+<p>movie-list works!</p>
+<div class="movie-list" *ngFor="let movie of movies">
+  <app-movie-card [data]="movie" (addFavorites)="handleToFavorites(movie.title)" (addWatchList)="handleToWatchList(movie.title)"></app-movie-card>
+</div>
+<div class="favourites-element">
+	Улюблене:
+	<ul>
+		<li *ngFor="let favorite of favorites">{{ favorite }}</li>
+	 </ul>
+</div>
+<div class="watch-later-element">
+	Подивитись:
+	<ul>
+		<li *ngFor="let item of watchLater">{{ item }}</li>
+	 </ul>
+</div>
+
