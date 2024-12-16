@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import { MyComponentComponent } from './lessons/lesson-3/my-component/my-component.component';
+import { MovieListComponent } from './project/components/movie-list/movie-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ MyComponentComponent],
+  imports: [ MovieListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

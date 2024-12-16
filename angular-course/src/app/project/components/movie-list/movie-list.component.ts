@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
-import MovieData from '../../../assets/data/mock-data.json';
+import MovieData from '../../../../assets/data/mock-data.json';
 import { CommonModule } from '@angular/common';
 
 @Component({
