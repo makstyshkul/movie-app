@@ -1,0 +1,34 @@
+<ng-container *ngIf="isUserLoggedIn">
+	<p>{{userName}}</p>
+</ng-container>
+
+<ul *ngFor="let item of items; trackBy: trackById">
+	<li>{{item.name}}</li>
+</ul>
+
+<ul class="nav">
+	<li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
+	<li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+	<li [class.active]="viewMode=='some'"><a (click)="viewMode='some'">Some View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+	<div *ngSwitchCase="'map'">Map View Content</div>
+	<div *ngSwitchCase="'list'">List View Content</div>
+	<div *ngSwitchCase="'some'">Some View Content</div>
+	<div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<p [ngClass]="{'active': isUserLoggedIn, 'inactive': !isUserLoggedIn}" [ngStyle]="{'color': isUserLoggedIn ? 'green' : 'red'}">{{userName}}</p>
+
+<input type="text" placeholder="Enter text" [appMaxLength] = "5">
+
+<div *ngIf="isUserLoggedIn; else contentTemplate">
+	<p>Loading...</p>
+</div>
+
+<ng-template #contentTemplate>
+	<p>Content loaded!</p>
+</ng-template>
+
+<p>Number: {{ 12345678433 | numberFormat}}</p>

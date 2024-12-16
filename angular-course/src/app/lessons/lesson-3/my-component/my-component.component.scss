@@ -1,0 +1,25 @@
+.nav{
+	display: flex;
+	flex-direction: row;
+}
+
+li{
+	width: 80px;
+	padding: 10px 15px;
+	list-style: none;
+	color: blue;
+
+	&.active{
+		background-color: blue;
+		color: white;
+	}
+}
+
+// p{
+// 	&.active{
+// 		color: red;
+// 	}
+// 	&.inactive{
+// 		color: green;
+// 	}
+// }

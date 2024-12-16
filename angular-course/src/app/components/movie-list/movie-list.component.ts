@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 export class MovieListComponent {
 
 	movies = MovieData;
-
 	favorites: string[] = [];
 	watchLater: string[] = [];
 
