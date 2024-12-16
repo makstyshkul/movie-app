@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {MaxLengthDirective} from '../../../directives/app-max-length.directive';
-import { NumberFormatPipe } from "../../../pipes/number-format.pipe";
+import {MaxLengthDirective} from '../directives/app-max-length.directive';
+import { NumberFormatPipe } from "../pipes/number-format.pipe";
 
 @Component({
   selector: 'app-my-component',
