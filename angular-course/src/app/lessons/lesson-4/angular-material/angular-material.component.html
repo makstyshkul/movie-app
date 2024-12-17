@@ -1,0 +1,42 @@
+<mat-card class="example-card" appearance="outlined">
+	<mat-card-header>
+	  <div mat-card-avatar class="example-header-image"></div>
+	  <mat-card-title>Shiba Inu</mat-card-title>
+	  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+	<mat-card-content>
+	  <p>
+		 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+		 A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+		 bred for hunting.
+	  </p>
+	</mat-card-content>
+	<mat-card-actions>
+	  <button mat-button>LIKE</button>
+	  <button mat-button>SHARE</button>
+	</mat-card-actions>
+ </mat-card>
+ 
+ <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+
+ <mat-list>
+	<div mat-subheader>Folders</div>
+	@for (folder of folders; track folder) {
+	  <mat-list-item>
+		 <mat-icon matListItemIcon>folder</mat-icon>
+		 <div matListItemTitle>{{folder.name}}</div>
+		 <div matListItemLine>{{folder.updated | date}}</div>
+	  </mat-list-item>
+	}
+	<mat-divider></mat-divider>
+	<div mat-subheader>Notes</div>
+	@for (note of notes; track note) {
+	  <mat-list-item>
+		 <mat-icon matListItemIcon>note</mat-icon>
+		 <div matListItemTitle>{{note.name}}</div>
+		 <div matListItemLine>{{note.updated | date}}</div>
+	  </mat-list-item>
+	}
+ </mat-list>
+ 
