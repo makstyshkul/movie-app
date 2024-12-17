@@ -16,13 +16,11 @@ export class MovieCardComponent {
 	@Output() addWatchList = new EventEmitter<any>;
 
 	addToFavorites(): void{
-		this.addFavorites.emit(this.data.title);
-		console.log('addToFavorite')
+		this.addFavorites.emit(this.data);
 	}
 
 	addToWatchList(): void{
-		this.addWatchList.emit(this.data.title);
-		console.log('addToWatchList')
+		this.addWatchList.emit(this.data);
 	}
 
 }

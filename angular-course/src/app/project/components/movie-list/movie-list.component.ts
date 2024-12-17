@@ -14,19 +14,19 @@ import { CommonModule } from '@angular/common';
 export class MovieListComponent {
 
 	movies = MovieData;
-	favorites: string[] = [];
-	watchLater: string[] = [];
+	favorites: object[] = [];
+	watchLater: object[] = [];
 
 
-	handleToFavorites(title: string): void{
-		if(!this.favorites.includes(title)){
-			this.favorites.push(title)
+	handleToFavorites(movie: object): void{
+		if(!this.favorites.includes(movie)){
+			this.favorites.push(movie)
 		}
 	}
 
-	handleToWatchList(title: string): void{
-		if(!this.watchLater.includes(title)){
-			this.watchLater.push(title)
+	handleToWatchList(movie: object): void{
+		if(!this.watchLater.includes(movie)){
+			this.watchLater.push(movie)
 		}
 	}
 }
