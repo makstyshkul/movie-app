@@ -7,7 +7,7 @@ import { PrimeNgComponent } from './lessons/lesson-4/prime-ng/prime-ng.component
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ MovieListComponent, CommonModule, AngularMaterialComponent, PrimeNgComponent],
+  imports: [ MovieListComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

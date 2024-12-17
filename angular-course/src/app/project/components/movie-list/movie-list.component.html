@@ -1,14 +1,14 @@
-<p>movie-list works!</p>
-
 @for(movie of movies; track movie.id){
-	<app-movie-card [data]="movie" (addFavorites)="handleToFavorites(movie.title)" (addWatchList)="handleToWatchList(movie.title)"></app-movie-card>
+	<app-movie-card [data]="movie" (addFavorites)="handleToFavorites(movie)" (addWatchList)="handleToWatchList(movie)"></app-movie-card>
 }
 
 <ng-container *ngIf="favorites.length > 0">
 	<div class="favourites-element">
 		Улюблене:
 		<ul>
-			<li *ngFor="let favorite of favorites">{{ favorite }}</li>
+			<li *ngFor="let favorite of favorites">
+					<app-movie-card [data]="favorite"></app-movie-card>
+			</li>
 		</ul>
 	</div>
 </ng-container>
@@ -17,7 +17,9 @@
 	<div class="watch-later-element">
 		Подивитись:
 		<ul>
-			<li *ngFor="let item of watchLater">{{ item }}</li>
+			<li *ngFor="let item of watchLater">
+				<app-movie-card [data]="item"></app-movie-card>
+			</li>
 		</ul>
 	</div>
 </ng-container>
