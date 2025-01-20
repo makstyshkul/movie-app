@@ -1,15 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './project/components/header/header.component';
+import { HomePageComponent } from "./project/pages/home-page/home-page.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule],
+  imports: [CommonModule, HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent{
+
+	@Input() data: any;
 
 }
