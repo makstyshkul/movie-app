@@ -5,11 +5,12 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
+import { FirstviewComponent } from "./firstview/firstview.component";
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HeaderComponent, CarouselModule, ButtonModule, TagModule, CommonModule],
+  imports: [HeaderComponent, CarouselModule, ButtonModule, TagModule, CommonModule, FirstviewComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
