@@ -2,11 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@500&display=swap');
 
 
-.header__container{
-	background-color: #000000;
+// .header__container{
+// 	background-color: #000000;
+// 	padding: 15px;
+// 	display: flex;
+// }
+
+.header__container {
+	position: absolute; 
+	width: 100%;
+	z-index: 10;
 	padding: 15px;
 	display: flex;
-}
+	align-items: center;
+	background: transparent; 
+ }
+
 
 .header__logo{
 	display: flex;
@@ -18,7 +29,7 @@
 	height: 60px;
 	width: 75px;
 	display: block;
-	background: url(../../../../assets/img/header/logo.png) left center no-repeat;
+	background: url(../../../../assets/img/header/logo-removebg-preview.png) left center no-repeat;
 	background-size: contain;
 	overflow: hidden;
 	text-indent: -1000px;
@@ -87,6 +98,11 @@
 	}
 }
 
+.header__search input::placeholder {
+	color: #fff; 
+	opacity: 1; 
+ }
+
 
 .header__auth {
 	display: flex;
@@ -110,11 +126,11 @@
 	color: white;
 	
 	&.signup-button {
-		border: 1px solid #007BFF;
+		border: 2px solid #0037ff;
 	}
 
 	&.login-button {
-		border: 1px solid #4CAF50;
+		border: 2px solid #008521;
 	}
 
 	&:hover {
