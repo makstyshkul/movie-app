@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@500&display=swap');
 
 
-// .header__container{
-// 	background-color: #000000;
-// 	padding: 15px;
-// 	display: flex;
-// }
 
 .header__container {
 	position: absolute; 
@@ -23,6 +18,7 @@
 	display: flex;
 	margin: 0px 15px;
 	max-width: 300px;
+	text-decoration: none;
 }
 
 .logo-box{
@@ -48,7 +44,7 @@
 .header__menu{
 	display: flex;
 	align-items: center;
-	margin-left: 15%;
+	margin-left: 18%;
 }
 
 .menu__list {
