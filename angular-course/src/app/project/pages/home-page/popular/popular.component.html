@@ -1,5 +1,5 @@
 <div class="movies-section">
-	<h2 class="section-title">Just Release</h2>
+	<h2 class="section-title">Popular of the week</h2>
  
 	<p-carousel [value]="movies" [numVisible]="4" [numScroll]="1" [showIndicators]="false" [responsiveOptions]="[
 	  { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
@@ -7,11 +7,12 @@
 	  { breakpoint: '480px', numVisible: 1, numScroll: 1 }
 	]">
 	  <ng-template pTemplate="item" let-movie>
-		 <div class="movie-card" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w400' + movie.poster_path + ')'}">
-			<h3>{{ movie.title }}</h3>
-			<div class="movie-info">
-				<span class="rating">⭐ {{ movie.vote_average.toFixed(1) }}</span>
-			  <p>{{ movie.release_date | date:'yyyy' }}</p>
+		 <div class="movie-card">
+			<span class="card-number">{{movie.number}}</span>
+			<img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+			<div class="card-info">
+				<h3>{{ movie.title }}</h3>
+				<span class="rating">⭐ {{ movie.vote_average.toFixed(1)  }}	| {{movie.release_date | date:'yyyy'}} </span>
 			</div>
 		 </div>
 	  </ng-template>

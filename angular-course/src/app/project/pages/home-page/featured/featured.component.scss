@@ -1,6 +1,8 @@
 .card {
 
 	position: relative;
+	margin-top: 40px;
+	
 
 	.p-carousel-content {
 	  overflow: hidden; 
@@ -18,19 +20,12 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: center; 
-		align-items: center;
-		text-align: center;
+		justify-content: end; 
+		// align-items: end;
+		// text-align: center;
 		overflow: hidden; 
+		padding-left: 80px;
 		
-		&::before {
-		  content: "";
-		  position: fixed; 
-		  width: 100vw;
-		  height: 100vh;
-		  background-color: rgba(0, 0, 0, 0.3); 
-		  z-index: 1;
-		}
 	 }
  
 	.absolute {
@@ -54,6 +49,7 @@
  
 	.bg-cover {
 	  background-size: cover;
+	  opacity: 0.8;
 	}
  
 	.bg-center {
@@ -74,6 +70,7 @@
  
 	.mb-6 {
 	  margin-bottom: 1.5rem;
+	  margin-top: 1.5rem;
 	}
  
 	.text-4xl {
@@ -146,4 +143,19 @@
 	z-index: 3;
  }
 
- 
+ .header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 100px;
+}
+.title {
+	font-size: 3rem;
+}
+.subtitle {
+	font-size: 1.25rem;
+	margin-top: 30px;
+}
+
+.card-content{
+	display: flex;
+}
