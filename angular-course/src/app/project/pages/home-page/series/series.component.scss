@@ -12,43 +12,54 @@
 		font-weight: 600;
 	  font-size: 36px;
 	  color: white;
-	  margin-bottom: 40px;
 	}
  
 	.movie-card {
-		position: relative;
 	  display: flex;
-	  align-items: center;
+	  flex-direction: column;
+	  border-radius: 10px;
 	  transition: transform 0.3s ease-in-out;
+	  margin-top: 20px;
+	  padding-left: 0px;
 	  width: 400px;
-	  height: 150px;
-	  gap: 10px;
  
 	  &:hover {
 		 transform: scale(1.05);
 	  }
 
-	  .card-number{
-		font-size: 36px;
-		color: #fff;
-		font-family: 'Montserrat', sans-serif;
-	  }
+	h3 {
+			font-size: 16px;
+			color: white;
+			margin-bottom: 0;
+		 }
 
-	  .card-poster{
-		margin-left: 10px;
-		border-radius: 10px;
-		height: 150px;
-		width: 200px;
-	  }
+		 .movie-image {
+			width: 400px;
+			height: 300px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+		 }
+ 
+	  .movie-info {
+		display: flex;
+		 color: white;
+		 
+ 
+		 p {
+			font-size: 14px;
+			opacity: 0.7;
+			margin-left: 10px;
+		 }
+ 
+		 .rating {
+			font-weight: bold;
+			color: #ffcc00;
 
-	  .card-info {
-		margin-left: 10px;
-		color: white;
-	}
-	
+		 }
+	  }
 
 	}
 
 
  }
- 
+

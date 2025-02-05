@@ -1,0 +1,91 @@
+<div class="movies-section">
+
+	<div class="awards">
+		<h2 class="section-title">Popular of the week</h2>
+ 
+	<p-carousel [value]="movies" [numVisible]="1" [numScroll]="1" [showIndicators]="false" [responsiveOptions]="[
+	  { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
+	  { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+	  { breakpoint: '480px', numVisible: 1, numScroll: 1 }
+	]">
+	  <ng-template pTemplate="item" let-movie>
+		 <div class="movie-card">
+			<span class="card-number">{{movie.number}}</span>
+			<img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+			<div class="card-info">
+				<h3>{{ movie.title }}</h3>
+				<span class="rating">⭐ {{ movie.vote_average.toFixed(1)  }}	| {{movie.release_date | date:'yyyy'}} </span>
+				<p class="text-lg mb-6">{{ movie.overview }}</p>
+			</div>
+			<div class="flex  space-x-4">
+				<button class="px-6 py-2 bg-green-500 rounded-md text-white font-semibold hover:bg-green-600">
+				  Play Now
+				</button>
+				<button class="px-6 py-2 bg-transparent rounded-md text-white font-semibold hover:bg-blue-600">
+				Add Watchlist
+				</button>
+			 </div>
+		 </div>
+	  </ng-template>
+	</p-carousel>
+	</div>
+
+	<!-- <div class="fast">
+		<h2 class="section-title">Fast</h2>
+ 
+	<p-carousel [value]="popMovies" [numVisible]="4" [numScroll]="1" [showIndicators]="false" [responsiveOptions]="[
+	  { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
+	  { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+	  { breakpoint: '480px', numVisible: 1, numScroll: 1 }
+	]">
+	  <ng-template pTemplate="item" let-movie>
+		 <div class="movie-card">
+			<span class="card-number">{{movie.number}}</span>
+			<img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+			<div class="card-info">
+				<h3>{{ movie.title }}</h3>
+				<span class="rating">⭐ {{ movie.vote_average.toFixed(1)  }}	| {{movie.release_date | date:'yyyy'}} </span>
+			</div>
+		 </div>
+	  </ng-template>
+	</p-carousel>
+	</div> -->
+
+	<div class="movies-list">
+		<h2 class="section-title">Fast</h2>
+		<div *ngFor="let movie of popMovies.slice(0, 3)" class="movie-card">
+		  <img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+		  <div class="movie-info">
+			<span class="rating">⭐ {{ movie.vote_average.toFixed(1) }}</span>
+		  <p>|	{{ movie.release_date | date:'yyyy' }}</p>
+		</div>
+		</div>
+	 </div>
+
+	 <div class="movies-list">
+		<h2 class="section-title">Live</h2>
+		<div *ngFor="let movie of movies.slice(0, 3)" class="movie-card">
+		  <img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+		  <div class="movie-info">
+			<span class="rating">⭐ {{ movie.vote_average.toFixed(1) }}</span>
+		  <p>|	{{ movie.release_date | date:'yyyy' }}</p>
+		</div>
+		</div>
+	 </div>
+
+	 <div class="movies-list">
+		<h2 class="section-title">Now Playing</h2>
+		<div *ngFor="let movie of movies.slice(3, 6)" class="movie-card">
+		  <img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title" class="card-poster"/>	
+		  <div class="movie-info">
+			<span class="rating">⭐ {{ movie.vote_average.toFixed(1) }}</span>
+		  <p>|	{{ movie.release_date | date:'yyyy' }}</p>
+		</div>
+		</div>
+	 </div>
+		 
+	 
+	 
+	
+ </div>
+ 
