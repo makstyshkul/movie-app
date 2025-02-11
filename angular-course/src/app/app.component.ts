@@ -1,11 +1,11 @@
 import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from "./project/pages/home-page/home-page.component";
+import { DescriptionMoviePageComponent } from "./project/pages/description-movie-page/description-movie-page.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HomePageComponent],
+  imports: [CommonModule, DescriptionMoviePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

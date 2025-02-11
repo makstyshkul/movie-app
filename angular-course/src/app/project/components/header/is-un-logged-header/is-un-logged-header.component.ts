@@ -4,12 +4,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-is-un-logged-header',
   standalone: true,
   imports: [CommonModule, InputTextModule, ButtonModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './is-un-logged-header.component.html',
+  styleUrl: './is-un-logged-header.component.scss'
 })
-export class HeaderComponent {
+export class IsUnLoggedHeaderComponent {
 
 }
