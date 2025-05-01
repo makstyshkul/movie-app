@@ -2,17 +2,21 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-is-logged-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, InputTextModule, ButtonModule],
   templateUrl: './is-logged-header.component.html',
   styleUrl: './is-logged-header.component.scss'
 })
 
 export class IsLoggedHeaderComponent {
 	isDropdownVisible = false;
+
+	  constructor(private router: Router, private authService: AuthService) {}
 
   toggleDropdown(): void {
     this.isDropdownVisible = !this.isDropdownVisible;
@@ -26,7 +30,13 @@ export class IsLoggedHeaderComponent {
     }
   }
 
-  logout(): void {
-    console.log('User logged out');
-  }
+  onAvatarClick(event: MouseEvent): void {
+	event.stopPropagation();
+	this.isDropdownVisible = !this.isDropdownVisible;
+ }
+
+  logout() {
+	this.authService.logout();
+	this.router.navigate(['/home']);
+ }
 }

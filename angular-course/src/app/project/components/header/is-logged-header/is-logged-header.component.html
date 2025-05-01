@@ -1,8 +1,8 @@
 <div class="header__container">
 	<a href="/" title="Home" class="header__logo">
-		<a href="/" class="logo-box" title="Home"></a>
+		<div class="logo-box"></div>
 		<p class="logo__title">UA KinoPortal</p>
-	</a>
+	 </a>
 
 	<div class="header__menu">
 		<ul class="menu__list">
@@ -37,12 +37,12 @@
 			<i class="pi pi-bell"></i>
 		</div>
 
-		<div class="user-avatar" (click)="toggleDropdown()">
+		<div class="user-avatar" (click)="onAvatarClick($event)">
 			<img src="../../../../../assets/img/header/avatar.png" alt="User Avatar" />
 			<div class="dropdown-menu" *ngIf="isDropdownVisible">
 			  <a routerLink="/profile">Profile</a>
 			  <a routerLink="/settings">Settings</a>
-			  <a (click)="logout()">Logout</a>
+			  <a href="#" (click)="logout(); $event.preventDefault()">Logout</a>
 			</div>
 		 </div>
 	</div>

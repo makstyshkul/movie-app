@@ -1,17 +1,27 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DescriptionMoviePageComponent } from "./project/pages/description-movie-page/description-movie-page.component";
+import { HomePageComponent } from "./project/pages/home-page/home-page.component";
+import { AuthService } from './project/services/auth.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, DescriptionMoviePageComponent],
+  imports: [CommonModule, HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
 
 	@Input() data: any;
 
+isLoggedIn = false;
+ 
+	constructor(private authService: AuthService) {}
+ 
+	ngOnInit() {
+	  this.authService.loggedIn$.subscribe((status) => {
+		 this.isLoggedIn = status;
+	  });
+	}
 }

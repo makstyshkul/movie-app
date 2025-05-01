@@ -3,9 +3,12 @@ import { MovieListPageComponent } from './lessons/lesson-5/pages/movie-list-page
 import { MovieDetailsPageComponent } from './lessons/lesson-5/pages/movie-details-page/movie-details-page.component';
 import { MovieGuard } from './lessons/lesson-5/guards/movie.guard';
 import { MovieResolver } from './lessons/lesson-5/guards/movie.resolver';
+import { IsLoggedHeaderComponent } from './project/components/header/is-logged-header/is-logged-header.component';
 
 export const routes: Routes = [
 	{path: 'movie-list', component: MovieListPageComponent},
-	{path: 'movie/:id', canActivate: [MovieGuard], resolve: {data: MovieResolver}, component: MovieDetailsPageComponent}
+	{path: 'movie/:id', canActivate: [MovieGuard], resolve: {data: MovieResolver}, component: MovieDetailsPageComponent},
+	{ path: 'home', component: IsLoggedHeaderComponent },
+
 
 ];
