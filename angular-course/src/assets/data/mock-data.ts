@@ -161,7 +161,7 @@ export const popularMovies = [
     "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
     "release_date": "2024-06-11",
     "title": "Inside Out 2",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=LEjhY15eCx0",
     "vote_average": 7.818,
     "vote_count": 233
   },
@@ -181,7 +181,7 @@ export const popularMovies = [
     "poster_path": "/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
     "release_date": "2024-05-08",
     "title": "Kingdom of the Planet of the Apes",
-    "video": false,
+	 "video": "https://www.youtube.com/watch?v=Kdr5oedn7q8",
     "vote_average": 6.842,
     "vote_count": 1090
   },
@@ -202,7 +202,7 @@ export const popularMovies = [
     "poster_path": "/qZPLK5ktRKa3CL4sKRZtj8UlPYc.jpg",
     "release_date": "2024-06-05",
     "title": "Under Paris",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=HPfkQ9gMLMY&ab_channel=NetflixFrance",
     "vote_average": 5.838,
     "vote_count": 542
   },
@@ -223,7 +223,7 @@ export const popularMovies = [
     "poster_path": "/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg",
     "release_date": "2024-06-05",
     "title": "Bad Boys: Ride or Die",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=ZTQyMmz-cQE",
     "vote_average": 7.1,
     "vote_count": 312
   },
@@ -245,7 +245,7 @@ export const popularMovies = [
     "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
     "release_date": "2015-06-17",
     "title": "Inside Out",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=J4_8jijwNs0",
     "vote_average": 7.916,
     "vote_count": 20603
   },
@@ -265,7 +265,7 @@ export const popularMovies = [
     "poster_path": "/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg",
     "release_date": "2024-03-27",
     "title": "Godzilla x Kong: The New Empire",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=qqrpMRDuPfc",
     "vote_average": 7.218,
     "vote_count": 2804
   },
@@ -285,7 +285,7 @@ export const popularMovies = [
     "poster_path": "/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg",
     "release_date": "2024-04-10",
     "title": "Civil War",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=aDyQxtg0V2w",
     "vote_average": 7.02,
     "vote_count": 1587
   },
@@ -306,7 +306,7 @@ export const popularMovies = [
     "poster_path": "/lW6IHrtaATxDKYVYoQGU5sh0OVm.jpg",
     "release_date": "2023-05-31",
     "title": "The Roundup: No Way Out",
-    "video": false,
+    "video": "https://www.youtube.com/watch?v=iD-_kZe6eIY&pp=0gcJCdgAo7VqN5tD",
     "vote_average": 7.123,
     "vote_count": 272
   },

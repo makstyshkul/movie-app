@@ -146,4 +146,35 @@
 	z-index: 3;
  }
 
+ ::ng-deep .p-dialog {
+	background-color: #1e1e1e; 
+	border-radius: 1rem;
+	color: #fff;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+ }
  
+ ::ng-deep .p-dialog .p-dialog-header {
+	background-color: #1e1e1e;
+	color: #ffffff;
+	border-bottom: 1px solid #333;
+	font-size: 1.25rem;
+	font-weight: 600;
+ }
+ 
+ ::ng-deep .p-dialog .p-dialog-content {
+	padding: 1rem;
+	background-color: #1e1e1e;
+ }
+ 
+ ::ng-deep .p-dialog .p-dialog-header-icon {
+	color: #fff;
+ }
+ 
+ iframe {
+	border-radius: 0.5rem;
+ }
+
+ ::ng-deep .p-dialog .p-dialog-header-icon:hover {
+	color: #f87171; 
+ }
+  

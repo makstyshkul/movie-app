@@ -1,22 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {popularMovies} from '../../../../../assets/data/mock-data';
+import { popularMovies } from '../../../../../assets/data/mock-data';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
-import { TagModule } from 'primeng/tag';
+import { DialogModule } from 'primeng/dialog';
+import { SafePipe } from '../../../pipes/safe-pipe.pipe';
 
 @Component({
   selector: 'app-firstview',
   standalone: true,
-  imports: [ CarouselModule, ButtonModule, TagModule, CommonModule],
+  imports: [
+    CommonModule,
+    CarouselModule,
+    ButtonModule,
+    DialogModule,
+    SafePipe
+  ],
   templateUrl: './firstview.component.html',
-  styleUrl: './firstview.component.scss'
+  styleUrls: ['./firstview.component.scss']
 })
-
-
 export class FirstviewComponent {
+  movies = popularMovies;
 
-	movies = popularMovies;
+  selectedVideoUrl: string | null = null;
+  displayTrailer: boolean = false;
 
+  openTrailer(videoUrl: string) {
+    this.selectedVideoUrl = videoUrl;
+    this.displayTrailer = true;
+  }
 
+  closeTrailer() {
+    this.displayTrailer = false;
+    this.selectedVideoUrl = null;
+  }
 }
