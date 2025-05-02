@@ -18,9 +18,7 @@
 			<li class="list__item">
 				Selections
 			</li>
-			<li class="list__item">
-				Community
-			</li>
+			<li class="list__item" (click)="navigateToCommunity()">Community</li>
 			<li class="list__item">
 				TOP 100
 			</li>
@@ -33,9 +31,22 @@
 	</div>
 
 	<div class="header__auth">
-		<div class="notification-icon">
+		<div class="notification-icon" (click)="toggleSubscriptionDropdown()">
 			<i class="pi pi-bell"></i>
-		</div>
+			<span
+			  class="notification-badge"
+			  *ngIf="subscriptionCount > 0"
+			>
+			  {{ subscriptionCount }}
+			</span>
+		 
+			<div class="subscription-dropdown" *ngIf="showSubscriptionDropdown && subscribedMovies?.length">
+			  <div class="subscription-item" *ngFor="let movie of subscribedMovies">
+				 <span class="movie-title">{{ movie.title }}</span>
+				 <button (click)="unsubscribe(movie.id)">Unsubscribe</button>
+			  </div>
+			</div>
+		 </div>
 
 		<div class="user-avatar" (click)="onAvatarClick($event)">
 			<img src="../../../../../assets/img/header/avatar.png" alt="User Avatar" />

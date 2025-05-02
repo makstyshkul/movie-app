@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from "./project/pages/home-page/home-page.component";
 import { AuthService } from './project/services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HomePageComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

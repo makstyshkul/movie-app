@@ -1,4 +1,5 @@
-<div class="header__container">
+
+  <div class="header__container">
 	<a href="/" title="Home" class="header__logo">
 	  <a href="/" class="logo-box" title="Home"></a>
 	  <p class="logo__title">UA KinoPortal</p>
@@ -10,7 +11,7 @@
 		 <li class="list__item">Series</li>
 		 <li class="list__item">Cartoons</li>
 		 <li class="list__item">Selections</li>
-		 <li class="list__item">Community</li>
+		 <li class="list__item" (click)="navigateToCommunity()">Community</li>
 		 <li class="list__item">TOP 100</li>
 	  </ul>
 	</div>
@@ -38,14 +39,12 @@
 	</div>
  </div>
  
- <!-- 👇 Попап логіну -->
  <app-login-popup
 	*ngIf="showLogin"
 	(closed)="closeLogin()"
 	(loggedIn)="handleLogin($event)"
  ></app-login-popup>
  
- <!-- 👇 Попап реєстрації -->
  <app-signup-popup
 	*ngIf="showRegister"
 	(closed)="closeRegister()"

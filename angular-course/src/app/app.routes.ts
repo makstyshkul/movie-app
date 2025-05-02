@@ -4,11 +4,12 @@ import { MovieDetailsPageComponent } from './lessons/lesson-5/pages/movie-detail
 import { MovieGuard } from './lessons/lesson-5/guards/movie.guard';
 import { MovieResolver } from './lessons/lesson-5/guards/movie.resolver';
 import { IsLoggedHeaderComponent } from './project/components/header/is-logged-header/is-logged-header.component';
+import { CommunityPageComponent } from './project/pages/community-page/community-page.component';
+import { HomePageComponent } from './project/pages/home-page/home-page.component';
 
 export const routes: Routes = [
-	{path: 'movie-list', component: MovieListPageComponent},
-	{path: 'movie/:id', canActivate: [MovieGuard], resolve: {data: MovieResolver}, component: MovieDetailsPageComponent},
-	{ path: 'home', component: IsLoggedHeaderComponent },
-
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
+	{ path: 'home', component: HomePageComponent },
+	{ path: 'community', component: CommunityPageComponent },
 
 ];

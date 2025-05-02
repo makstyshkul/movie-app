@@ -140,6 +140,106 @@ export const nowPlayingMovies = [
     "vote_average": 6.769,
     "vote_count": 794
   },
+  {
+	"adult": false,
+	"backdrop_path": "/fU3oaBud5SZadw6k1ycftYedmXJ.jpg",
+	"genre_ids": [
+	  16,
+	  878,
+	  28,
+	  18
+	],
+	"id": 1146972,
+	"original_language": "ja",
+	"original_title": "機動戦士ガンダムSEED FREEDOM",
+	"overview": "In C.E.75, the fighting still continues. There are independence movements, and aggression by Blue Cosmos... In order to calm the situation, a global peace monitoring agency called COMPASS is established, with Lacus as its first president. As members of COMPASS, Kira and his comrades intervene into various regional battles. Then a newly established nation called Foundation proposes a joint operation against a Blue Cosmos stronghold.",
+	"popularity": 375.399,
+	"poster_path": "/1EBnttleJaKnWWyyEqfiSn76ZjT.jpg",
+	"release_date": "2024-01-26",
+	"title": "Mobile Suit Gundam SEED FREEDOM",
+	"video": false,
+	"vote_average": 6.289,
+	"vote_count": 19
+ },
+ {
+	"adult": false,
+	"backdrop_path": "/ycCj6Ssuu2IdM23AYR7B8nbxQPA.jpg",
+	"genre_ids": [
+	  16,
+	  10751,
+	  35,
+	  28
+	],
+	"id": 519182,
+	"original_language": "en",
+	"original_title": "Despicable Me 4",
+	"overview": "Gru and Lucy and their girls — Margo, Edith and Agnes — welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, and the family is forced to go on the run.",
+	"popularity": 373.149,
+	"poster_path": "/3w84hCFJATpiCO5g8hpdWVPBbmq.jpg",
+	"release_date": "2024-06-20",
+	"title": "Despicable Me 4",
+	"video": false,
+	"vote_average": 9,
+	"vote_count": 6
+ },
+ {
+	"adult": false,
+	"backdrop_path": "/rmNlWyez5cniGtXkgixG1ezdqVk.jpg",
+	"genre_ids": [
+	  28,
+	  53
+	],
+	"id": 1093995,
+	"original_language": "en",
+	"original_title": "Chief of Station",
+	"overview": "After learning that the death of his wife was not an accident, a former CIA Station Chief is forced back into the espionage underworld, teaming up with an adversary to unravel a conspiracy that challenges everything he thought he knew.",
+	"popularity": 351.28,
+	"poster_path": "/uuA01PTtPombRPvL9dvsBqOBJWm.jpg",
+	"release_date": "2024-05-02",
+	"title": "Chief of Station",
+	"video": false,
+	"vote_average": 5.357,
+	"vote_count": 49
+ },
+ {
+	"adult": false,
+	"backdrop_path": "/k37Ccgu05Am1xxgN5GaW0HX9Kkl.jpg",
+	"genre_ids": [
+	  27,
+	  53
+	],
+	"id": 1087388,
+	"original_language": "en",
+	"original_title": "Sting",
+	"overview": "After raising an unnervingly talented spider in secret, 12-year-old Charlotte must face the truth about her pet and fight for her family's survival.",
+	"popularity": 293.651,
+	"poster_path": "/zuSAZIG1PSrxFwPeAlGtg9LTwxo.jpg",
+	"release_date": "2024-04-12",
+	"title": "Sting",
+	"video": false,
+	"vote_average": 6.4,
+	"vote_count": 127
+ },
+ {
+	"adult": false,
+	"backdrop_path": "/uaSIzbRfwLidxRNMvdZAUwW3vtL.jpg",
+	"genre_ids": [
+	  28,
+	  14,
+	  10752
+	],
+	"id": 856289,
+	"original_language": "zh",
+	"original_title": "封神第一部：朝歌风云",
+	"overview": "Based on the most well-known classical fantasy novel of China, Fengshenyanyi, the trilogy is a magnificent eastern high fantasy epic that recreates the prolonged mythical wars between humans, immortals and monsters, which happened more than three thousand years ago.",
+	"popularity": 234.995,
+	"poster_path": "/1v5ZteB49M0RUGYrf9R37Mz8yo2.jpg",
+	"release_date": "2023-07-20",
+	"title": "Creation of the Gods I: Kingdom of Storms",
+	"video": false,
+	"vote_average": 7,
+	"vote_count": 287
+ },
 ]
 
 export const popularMovies = [
