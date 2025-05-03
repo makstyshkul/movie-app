@@ -6,11 +6,13 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { nowPlayingMovies } from '../../../../assets/data/mock-data';
 import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-movies-page',
   standalone: true,
-  imports: [CommonModule,IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent, FormsModule],
+  imports: [CommonModule,IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent, FormsModule, RouterModule,],
   templateUrl: './movies-page.component.html',
   styleUrl: './movies-page.component.scss'
 })
@@ -29,36 +31,61 @@ export class MoviesPageComponent {
 	selectedGenre = '';
 	selectedYear = '';
 	selectedRating = '';
-
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.authService.loggedIn$.subscribe((status) => {
-      this.isLoggedIn = status;
-    });
-
-	 this.years = Array.from(new Set(this.movies.map(movie => movie.release_date?.slice(0, 4)))).sort((a, b) => +b - +a);
-  }
+	searchTerm: string = '';
 
 
-  filterMovies() {
+  constructor(
+	private authService: AuthService, 
+	private route: ActivatedRoute,
+	private router: Router) {}
+
+	ngOnInit() {
+		this.authService.loggedIn$.subscribe((status) => {
+		  this.isLoggedIn = status;
+		});
+	 
+		this.route.queryParams.subscribe(params => {
+			this.selectedGenre = params['genre'] || '';
+			this.selectedYear = params['year'] || '';
+			this.selectedRating = params['rating'] || '';
+			this.searchTerm = params['search'] || '';
+			this.filterMovies(false);
+		 });
+		this.years = Array.from(new Set(this.movies.map(movie => movie.release_date?.slice(0, 4)))).sort((a, b) => +b - +a);
+}
+
+
+filterMovies(updateUrl = true) {
 	this.filteredMovies = this.movies.filter((movie) => {
 	  const movieYear = movie.release_date?.slice(0, 4);
 	  const rating = movie.vote_average;
+	  const titleMatch = movie.title.toLowerCase().includes(this.searchTerm.toLowerCase());
 	  const genreMatch = this.selectedGenre ? movie.genre_name?.includes(this.selectedGenre) : true;
 	  const yearMatch = this.selectedYear ? movieYear === this.selectedYear : true;
 	  const ratingMatch = this.selectedRating ? rating >= +this.selectedRating : true;
-
-	  return genreMatch && yearMatch && ratingMatch;
+ 
+	  return titleMatch && genreMatch && yearMatch && ratingMatch;
 	});
+ 
+	if (updateUrl) {
+	  this.router.navigate([], {
+		 relativeTo: this.route,
+		 queryParams: {
+			genre: this.selectedGenre || null,
+			year: this.selectedYear || null,
+			rating: this.selectedRating || null,
+			search: this.searchTerm || null
+		 },
+		 queryParamsHandling: 'merge'
+	  });
+	}
  }
 
  clearFilters() {
 	this.selectedGenre = '';
 	this.selectedYear = '';
 	this.selectedRating = '';
-	this.filteredMovies = this.movies;
+	this.searchTerm = '';
+	this.filterMovies(); 
  }
-
-
 }

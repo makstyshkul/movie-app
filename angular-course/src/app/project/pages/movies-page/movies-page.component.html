@@ -8,6 +8,15 @@
 	  <h2 class="section-title">Watch Movies online in HD quality</h2>
 
 	  <div class="filters">
+		
+		<input
+		type="text"
+		[(ngModel)]="searchTerm"
+		(input)="filterMovies()"
+		placeholder="Пошук за назвою"
+		class="search-input"
+	 />
+
 		<select [(ngModel)]="selectedGenre" (change)="filterMovies()">
 		  <option value="">All genres</option>
 		  <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
