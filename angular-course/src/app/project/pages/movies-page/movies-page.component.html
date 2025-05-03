@@ -1,0 +1,56 @@
+<ng-container class="container">
+	<app-is-logged-header
+	*ngIf="isLoggedIn"
+ ></app-is-logged-header>
+ 	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
+ 
+	<div class="content-section">
+	  <h2 class="section-title">Watch Movies online in HD quality</h2>
+
+	  <div class="filters">
+		<select [(ngModel)]="selectedGenre" (change)="filterMovies()">
+		  <option value="">All genres</option>
+		  <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+		</select>
+	 
+		<select [(ngModel)]="selectedYear" (change)="filterMovies()">
+		  <option value="">All years</option>
+		  <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+		</select>
+	 
+		<select [(ngModel)]="selectedRating" (change)="filterMovies()">
+		  <option value="">All marks</option>
+		  <option *ngFor="let rating of ratings" [value]="rating">{{ rating }}+</option>
+		</select>
+
+		<button class="clear-btn" (click)="clearFilters()">Очистити фільтри</button>
+
+	 </div>
+ 
+	  <div class="movie-list">
+		<div
+		class="movie-card"
+		*ngFor="let movie of filteredMovies"
+	 >
+		<div
+		  class="movie-background"
+		  [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w400' + movie.poster_path + ')'}"
+		></div>
+	 
+		<h3>{{ movie.title }}</h3>
+		<div class="movie-info">
+		  <p *ngIf="movie.overview.length > 100" class="overview">{{ movie.overview | slice:0:100 }}...</p>
+		  <span class="rating">⭐ {{ movie.vote_average.toFixed(1) }}</span>
+		  <p>{{ movie.release_date | date:'yyyy' }}</p>
+		</div>	
+	 </div>
+
+	 <div class="no-movies" *ngIf="filteredMovies.length === 0">
+		Movies with this parameters not found
+	 </div>
+	  </div>
+	</div>
+ 
+	<app-footer></app-footer>
+ </ng-container>
+ 

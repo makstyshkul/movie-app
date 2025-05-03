@@ -19,7 +19,8 @@ export const nowPlayingMovies = [
     "title": "Inside Out 2",
     "video": false,
     "vote_average": 7.763,
-    "vote_count": 226
+    "vote_count": 226,
+	 "genre_name": "Drama"
   },
   {
     "adult": false,
@@ -39,7 +40,8 @@ export const nowPlayingMovies = [
     "title": "Kingdom of the Planet of the Apes",
     "video": false,
     "vote_average": 6.824,
-    "vote_count": 1079
+    "vote_count": 1079,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -60,7 +62,8 @@ export const nowPlayingMovies = [
     "title": "Under Paris",
     "video": false,
     "vote_average": 5.818,
-    "vote_count": 535
+    "vote_count": 535,
+	 "genre_name": "Horror"
   },
   {
     "adult": false,
@@ -81,7 +84,8 @@ export const nowPlayingMovies = [
     "title": "Bad Boys: Ride or Die",
     "video": false,
     "vote_average": 7.066,
-    "vote_count": 305
+    "vote_count": 305,
+	 "genre_name": "Drama"
   },
   {
     "adult": false,
@@ -101,7 +105,8 @@ export const nowPlayingMovies = [
     "title": "Civil War",
     "video": false,
     "vote_average": 7,
-    "vote_count": 1580
+    "vote_count": 1580,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -119,7 +124,8 @@ export const nowPlayingMovies = [
     "title": "The Last Kumite",
     "video": false,
     "vote_average": 5.467,
-    "vote_count": 15
+    "vote_count": 15,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -138,7 +144,8 @@ export const nowPlayingMovies = [
     "title": "Atlas",
     "video": false,
     "vote_average": 6.769,
-    "vote_count": 794
+    "vote_count": 794,
+	 "genre_name": "Action"
   },
   {
 	"adult": false,
@@ -159,7 +166,8 @@ export const nowPlayingMovies = [
 	"title": "Mobile Suit Gundam SEED FREEDOM",
 	"video": false,
 	"vote_average": 6.289,
-	"vote_count": 19
+	"vote_count": 19,
+	"genre_name": "Drama"
  },
  {
 	"adult": false,
@@ -180,7 +188,8 @@ export const nowPlayingMovies = [
 	"title": "Despicable Me 4",
 	"video": false,
 	"vote_average": 9,
-	"vote_count": 6
+	"vote_count": 6,
+	"genre_name": "Comedy"
  },
  {
 	"adult": false,
@@ -199,7 +208,8 @@ export const nowPlayingMovies = [
 	"title": "Chief of Station",
 	"video": false,
 	"vote_average": 5.357,
-	"vote_count": 49
+	"vote_count": 49,
+	"genre_name": "Action"
  },
  {
 	"adult": false,
@@ -218,7 +228,8 @@ export const nowPlayingMovies = [
 	"title": "Sting",
 	"video": false,
 	"vote_average": 6.4,
-	"vote_count": 127
+	"vote_count": 127,
+	"genre_name": "Horror"
  },
  {
 	"adult": false,
@@ -238,7 +249,8 @@ export const nowPlayingMovies = [
 	"title": "Creation of the Gods I: Kingdom of Storms",
 	"video": false,
 	"vote_average": 7,
-	"vote_count": 287
+	"vote_count": 287,
+	"genre_name": "Drama"
  },
 ]
 

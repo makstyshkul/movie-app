@@ -48,4 +48,8 @@ export class IsUnLoggedHeaderComponent {
   navigateToCommunity() {
     this.router.navigate(['/community']);
   }
+
+  navigateToMovies() {
+	this.router.navigate(['/movies']);
+ }
 }
