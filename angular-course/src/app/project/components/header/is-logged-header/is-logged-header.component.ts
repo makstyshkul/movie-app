@@ -66,4 +66,8 @@ unsubscribe(movieId: number): void {
  navigateToMovies() {
 	this.router.navigate(['/movies']);
  }
+
+ navigateToProfile() {
+	this.router.navigate(['/profile']);
+ }
 }

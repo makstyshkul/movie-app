@@ -16,6 +16,8 @@ import { Router, RouterModule } from '@angular/router';
 export class IsUnLoggedHeaderComponent {
   showLogin = false;
   showRegister = false;
+  isLoggedIn: boolean = false;
+
 
   constructor(private router: Router) {}
 
