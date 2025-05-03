@@ -1,0 +1,48 @@
+
+  <div class="header__container">
+	<a href="/" title="Home" class="header__logo">
+	  <a href="/" class="logo-box" title="Home"></a>
+	  <p class="logo__title">UA KinoPortal</p>
+	</a>
+ 
+	<div class="header__menu">
+	  <ul class="menu__list">
+		 <li class="list__item" (click)="navigateToMovies()">Movies</li>
+		 <li class="list__item">Series</li>
+		 <li class="list__item">Cartoons</li>
+		 <li class="list__item">Selections</li>
+		 <li class="list__item" (click)="navigateToCommunity()">Community</li>
+		 <li class="list__item">TOP 100</li>
+	  </ul>
+	</div>
+ 
+	<div class="header__auth">
+	  <button
+		 pButton
+		 label="Sign Up"
+		 icon="pi pi-user-plus"
+		 class="auth-button signup-button"
+		 (click)="openRegister()"
+	  ></button>
+	  <button
+		 pButton
+		 label="Login"
+		 icon="pi pi-sign-in"
+		 class="auth-button login-button"
+		 (click)="openLogin()"
+	  ></button>
+	</div>
+ </div>
+ 
+ <app-login-popup
+	*ngIf="showLogin"
+	(closed)="closeLogin()"
+	(loggedIn)="handleLogin($event)"
+ ></app-login-popup>
+ 
+ <app-signup-popup
+	*ngIf="showRegister"
+	(closed)="closeRegister()"
+	(registered)="handleRegister($event)"
+ ></app-signup-popup>
+ 

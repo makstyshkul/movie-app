@@ -1,16 +1,27 @@
-import {Component} from '@angular/core';
-import { MovieListComponent } from './project/components/movie-list/movie-list.component';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularMaterialComponent } from './lessons/lesson-4/angular-material/angular-material.component';
-import { PrimeNgComponent } from './lessons/lesson-4/prime-ng/prime-ng.component';
+import { AuthService } from './project/services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ MovieListComponent, CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent{
 
+export class AppComponent implements OnInit{
+
+	@Input() data: any;
+
+isLoggedIn = false;
+ 
+	constructor(private authService: AuthService) {}
+ 
+	ngOnInit() {
+	  this.authService.loggedIn$.subscribe((status) => {
+		 this.isLoggedIn = status;
+	  });
+	}
 }

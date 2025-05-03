@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@500&display=swap');
+
+
+.movies-section {
+	width: 100%;
+	padding-top: 75px;
+	background-color: #121212;
+	padding-left: 80px;
+ 
+	.section-title {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+	  font-size: 36px;
+	  color: white;
+	}
+ 
+	.movie-card {
+	  display: flex;
+	  flex-direction: column;
+	  border-radius: 10px;
+	  transition: transform 0.3s ease-in-out;
+	  margin-top: 20px;
+	  padding-left: 0px;
+	  width: 400px;
+ 
+	  &:hover {
+		 transform: scale(1.05);
+	  }
+
+	h3 {
+			font-size: 16px;
+			color: white;
+			margin-bottom: 0;
+		 }
+
+		 .movie-image {
+			width: 400px;
+			height: 300px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+		 }
+ 
+	  .movie-info {
+		display: flex;
+		 color: white;
+ 
+		 p {
+			font-size: 14px;
+			opacity: 0.7;
+			margin-left: 10px;
+		 }
+ 
+		 .rating {
+			font-weight: bold;
+			color: #ffcc00;
+
+		 }
+	  }
+
+	}
+
+
+ }
+

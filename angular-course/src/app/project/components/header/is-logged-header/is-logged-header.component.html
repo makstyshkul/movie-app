@@ -1,0 +1,57 @@
+<div class="header__container">
+	<a href="/" title="Home" class="header__logo">
+		<div class="logo-box"></div>
+		<p class="logo__title">UA KinoPortal</p>
+	 </a>
+
+	<div class="header__menu">
+		<ul class="menu__list">
+			<li class="list__item" (click)="navigateToMovies()">
+				Movies
+			</li>
+			<li class="list__item">
+				Series
+			</li>
+			<li class="list__item">
+				Cartoons
+			</li>
+			<li class="list__item">
+				Selections
+			</li>
+			<li class="list__item" (click)="navigateToCommunity()">Community</li>
+			<li class="list__item">
+				TOP 100
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="header__auth">
+		<div class="notification-icon" (click)="toggleSubscriptionDropdown()">
+			<i class="pi pi-bell"></i>
+			<span
+			  class="notification-badge"
+			  *ngIf="subscriptionCount > 0"
+			>
+			  {{ subscriptionCount }}
+			</span>
+		 
+			<div class="subscription-dropdown" *ngIf="showSubscriptionDropdown && subscribedMovies?.length">
+			  <div class="subscription-item" *ngFor="let movie of subscribedMovies">
+				 <span class="movie-title">{{ movie.title }}</span>
+				 <button (click)="unsubscribe(movie.id)">Unsubscribe</button>
+			  </div>
+			</div>
+		 </div>
+
+		<div class="user-avatar" (click)="onAvatarClick($event)">
+			<img src="../../../../../assets/img/header/avatar.png" alt="User Avatar" />
+			<div class="dropdown-menu" *ngIf="isDropdownVisible">
+			  <a routerLink="/profile">Profile</a>
+			  <a routerLink="/settings">Settings</a>
+			  <a href="#" (click)="logout(); $event.preventDefault()">Logout</a>
+			</div>
+		 </div>
+	</div>
+
+</div>

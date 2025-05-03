@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@500&display=swap');
+
+
+.movies-section {
+	width: 100%;
+	padding-top: 75px;
+	background-color: #121212;
+	padding-left: 80px;
+ 
+	.section-title {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+	  font-size: 36px;
+	  color: white;
+	  margin-bottom: 40px;
+	}
+ 
+	.movie-card {
+		position: relative;
+	  display: flex;
+	  align-items: center;
+	  transition: transform 0.3s ease-in-out;
+	  width: 400px;
+	  height: 150px;
+	  gap: 10px;
+ 
+	  &:hover {
+		 transform: scale(1.05);
+	  }
+
+	  .card-number{
+		font-size: 36px;
+		color: #fff;
+		font-family: 'Montserrat', sans-serif;
+	  }
+
+	  .card-poster{
+		margin-left: 10px;
+		border-radius: 10px;
+		height: 150px;
+		width: 200px;
+	  }
+
+	  .card-info {
+		margin-left: 10px;
+		color: white;
+	}
+	
+
+	}
+
+
+ }
+ 

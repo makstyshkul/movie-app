@@ -1,0 +1,13 @@
+
+<ng-container class="container">
+	<app-is-logged-header *ngIf="isLoggedIn"></app-is-logged-header>
+	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
+	<app-firstview></app-firstview>
+	<app-just-release></app-just-release>
+	<app-popular></app-popular>
+	<app-featured></app-featured>
+	<app-movies></app-movies>
+	<app-series></app-series>
+	<app-movies-awards></app-movies-awards>
+	<app-footer></app-footer>
+</ng-container>

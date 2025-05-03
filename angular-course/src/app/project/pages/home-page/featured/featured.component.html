@@ -1,0 +1,41 @@
+<div class="card">
+	<p-carousel 
+	  [value]="movies" 
+	  [numVisible]="1" 
+	  [circular]="true" 
+	  [autoplayInterval]="5000"
+	  [showNavigators]="false" 
+	  [showIndicators]="false"
+	>
+	  <ng-template pTemplate="item" let-movie>
+		 <div
+			class="relative h-96 w-full flex items-center bg-cover bg-center text-white"
+			[ngStyle]="{ 
+				'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')',
+				'background-color': 'rgba(0, 0, 0, 0.8)',
+				'background-blend-mode': 'darken'
+		  }"
+		 >
+			<div class="absolute inset-0 bg-black opacity-100"></div>
+
+				<div class="content relative z-10 max-w-4xl text-center">
+				<div class="header">
+				<h2 class="title">Featured in UA KinoPortal</h2> 
+				<h3 class="subtitle">Best featured for you today</h3>
+			</div>
+			  <h2 class="text-4xl font-bold mb-4">{{ movie.title }}</h2>
+			  <span class="rating">⭐ {{ movie.vote_average.toFixed(1)  }}	| {{movie.release_date | date:'yyyy'}} </span>
+			  <p class="text-lg mb-6">{{ movie.overview }}</p>
+			  <div class="flex  space-x-4">
+				 <button class="px-6 py-2 bg-green-500 rounded-md text-white font-semibold hover:bg-green-600">
+					Play Now
+				 </button>
+				 <button class="px-6 py-2 bg-transparent rounded-md text-white font-semibold hover:bg-blue-600">
+					Add Watchlist
+				 </button>
+			  </div>
+			</div>
+		 </div>
+	  </ng-template>
+	</p-carousel>
+ </div>
