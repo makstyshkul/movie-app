@@ -5,12 +5,13 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { CommonModule } from '@angular/common';
 import { nowPlayingMovies } from '../../../../assets/data/mock-data';
 import { AuthService } from '../../services/auth.service';
+import { FormatDatePipe } from "../../pipes/format-date/format-date.pipe";
 
 
 @Component({
   selector: 'app-top100-page',
   standalone: true,
-  imports: [CommonModule ,IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent],
+  imports: [CommonModule, IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent, FormatDatePipe],
   templateUrl: './top100-page.component.html',
   styleUrl: './top100-page.component.scss'
 })

@@ -23,9 +23,9 @@
 				 
 				 <div class="details">
 					<span class="genres">{{ movie.genre_name }}</span>
-					<span class="year">{{ movie.release_date }}</span>
+					<span class="year">{{ movie.release_date | formatDate }}</span>
 					<span class="imdb">IMDb {{ movie.vote_average.toFixed(1) }}</span>
-					<span class="views">{{ movie.popularity }}</span>
+					<span class="views">{{ movie.popularity.toFixed(0) }} votes</span>
 				 </div>
 			  </div>
 			</li>
