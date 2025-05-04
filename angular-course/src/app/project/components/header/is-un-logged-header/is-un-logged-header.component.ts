@@ -54,4 +54,8 @@ export class IsUnLoggedHeaderComponent {
   navigateToMovies() {
 	this.router.navigate(['/movies']);
  }
+
+ navigateToTop() {
+	this.router.navigate(['/top']);
+ }
 }
