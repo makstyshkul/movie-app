@@ -51,11 +51,15 @@ ngOnInit() {
   this.watched = this.movieService.getWatched();
 }
 
-removeMovie(type: 'watch' | 'favorite' | 'watched', id: number) {
-  this.movieService.removeFromList(type, id);
-  this.watchlist = this.movieService.getWatchLater();
-  this.favorite = this.movieService.getFavorites();
-  this.watched = this.movieService.getWatched();
+removeMovie(listType: 'watch' | 'favorite' | 'watched', movieId: number): void {
+	 console.log(`Removing from ${listType}: movie ID ${movieId}`);
+  if (listType === 'watch') {
+    this.watchlist = this.watchlist.filter(movie => movie.id !== movieId);
+  } else if (listType === 'favorite') {
+    this.favorite = this.favorite.filter(movie => movie.id !== movieId);
+  } else if (listType === 'watched') {
+    this.watched = this.watched.filter(movie => movie.id !== movieId);
+  }
 }
 
 }

@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie.model';
 import { environment } from '../enviroment'; 
-import { nowPlayingMovies, popularMovies } from '../../../assets/data/mock-data';
-import { MovieSummaryWithGenre } from '../models/movie-summary.model';
 
 @Injectable({
   providedIn: 'root'

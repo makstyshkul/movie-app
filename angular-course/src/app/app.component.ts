@@ -7,7 +7,7 @@ import { MoviePageComponent } from "./project/pages/movie-page/movie-page.compon
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, MoviePageComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

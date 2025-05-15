@@ -1,10 +1,22 @@
-<ng-container class="container">
-	<app-is-logged-header
-	*ngIf="isLoggedIn"
- ></app-is-logged-header>
- 	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
 
+	<ng-container class="container">
+  <app-is-logged-header *ngIf="isLoggedIn"></app-is-logged-header>
+  <app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
 
-	<app-footer></app-footer>
+  <div class="recommended-page">
+    <h2>Recommended for You</h2>
 
-	</ng-container>
+    <div class="movie-list">
+      <app-movie-card
+        *ngFor="let movie of recommendedMovies"
+        [movie]="movie">
+      </app-movie-card>
+    </div>
+
+    <button class="load-more" *ngIf="hasMore" (click)="loadMore()">
+      Load More
+    </button>
+  </div>
+
+  <app-footer></app-footer>
+</ng-container>

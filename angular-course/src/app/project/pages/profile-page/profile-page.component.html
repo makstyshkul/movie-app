@@ -47,13 +47,14 @@
 
  <div class="movie-list">
   <div *ngIf="activeTab === 'watchlist'">
-    <app-movie-card *ngFor="let movie of watchlist" [movie]="movie" (remove)="removeMovie('watch', movie.id)"/>
+    <app-movie-card *ngFor="let movie of watchlist" [movie]="movie" (click)="removeMovie('watch', movie.id)"/>
   </div>
   <div *ngIf="activeTab === 'favorite'">
-    <app-movie-card *ngFor="let movie of favorite" [movie]="movie" (remove)="removeMovie('favorite', movie.id)"/>
+    <app-movie-card *ngFor="let movie of favorite" [movie]="movie" (click)="removeMovie('favorite', movie.id)"/>
   </div>
   <div *ngIf="activeTab === 'watched'">
-    <app-movie-card *ngFor="let movie of watched" [movie]="movie" (remove)="removeMovie('watched', movie.id)"/>
+    <app-movie-card *ngFor="let movie of watched" [movie]="movie" (click)="removeMovie('watched', movie.id)"/>
+	 
   </div>
 </div>
  
