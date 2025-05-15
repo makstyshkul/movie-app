@@ -1,0 +1,83 @@
+.movie-container {
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+}
+
+.movie-header {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.release-date,
+.rating {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.details {
+  flex: 1;
+  max-width: 600px;
+}
+
+.actions {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  button {
+    background-color: #1c1c1c;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
+
+.trailer {
+  margin-top: 2rem;
+}
+
+.loading {
+  padding: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ccc;
+}

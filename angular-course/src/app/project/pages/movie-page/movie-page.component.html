@@ -1,0 +1,58 @@
+
+
+<ng-container class="container">
+	<app-is-logged-header
+	*ngIf="isLoggedIn"
+ ></app-is-logged-header>
+ 	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
+
+<div *ngIf="movie; else loading" class="movie-container">
+  <div class="movie-header"
+       *ngIf="movie.backdrop_path"
+       [style.backgroundImage]="'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')'">
+    <div class="overlay">
+      <h1 class="title">{{ movie.title }}</h1>
+      <p class="release-date">Release: {{ movie.release_date }}</p>
+      <p class="rating">⭐ {{ movie.vote_average | number:'1.1-1' }}/10</p>
+    </div>
+  </div>
+
+  <div class="movie-content">
+    <img *ngIf="movie.poster_path"
+         class="poster"
+         [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
+         [alt]="movie.title" />
+
+    <div class="details">
+      <h2>Overview</h2>
+      <p>{{ movie.overview }}</p>
+
+      <div class="actions">
+        <button (click)="addToWatchLater()">➕ Watch Later</button>
+        <button (click)="markAsWatched()">✅ Mark as Watched</button>
+        <button (click)="toggleLike()">
+          {{ liked ? '💔 Unlike' : '❤️ Like' }}
+        </button>
+      </div>
+
+      <div *ngIf="trailerUrl" class="trailer">
+        <h3>Watch Trailer</h3>
+        <iframe
+			[src]="trailerUrl"
+			width="100%"
+			height="400"
+			frameborder="0"
+			allowfullscreen>
+			</iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="loading">Loading movie details...</p>
+</ng-template>
+
+
+	<app-footer></app-footer>
+ </ng-container>

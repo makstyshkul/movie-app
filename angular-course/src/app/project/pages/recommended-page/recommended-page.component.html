@@ -1,0 +1,10 @@
+<ng-container class="container">
+	<app-is-logged-header
+	*ngIf="isLoggedIn"
+ ></app-is-logged-header>
+ 	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
+
+
+	<app-footer></app-footer>
+
+	</ng-container>

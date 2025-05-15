@@ -2,11 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './project/services/auth.service';
 import { RouterModule } from '@angular/router';
+import { MoviePageComponent } from "./project/pages/movie-page/movie-page.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MoviePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

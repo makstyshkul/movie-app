@@ -58,4 +58,8 @@ export class IsUnLoggedHeaderComponent {
  navigateToTop() {
 	this.router.navigate(['/top']);
  }
+
+ navigateToRecommended() {
+	this.router.navigate(['/recommended']);
+ }
 }

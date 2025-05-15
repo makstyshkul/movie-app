@@ -44,6 +44,18 @@
 	  </div>
 	</div>
  </div>
+
+ <div class="movie-list">
+  <div *ngIf="activeTab === 'watchlist'">
+    <app-movie-card *ngFor="let movie of watchlist" [movie]="movie" (remove)="removeMovie('watch', movie.id)"/>
+  </div>
+  <div *ngIf="activeTab === 'favorite'">
+    <app-movie-card *ngFor="let movie of favorite" [movie]="movie" (remove)="removeMovie('favorite', movie.id)"/>
+  </div>
+  <div *ngIf="activeTab === 'watched'">
+    <app-movie-card *ngFor="let movie of watched" [movie]="movie" (remove)="removeMovie('watched', movie.id)"/>
+  </div>
+</div>
  
  	<app-footer></app-footer>
  </ng-container>

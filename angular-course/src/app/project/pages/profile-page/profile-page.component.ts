@@ -4,11 +4,14 @@ import { IsUnLoggedHeaderComponent } from "../../components/header/is-un-logged-
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { FooterComponent } from "../../components/footer/footer.component";
+import { Movie } from '../../models/movie.model';
+import { MovieService } from '../../services/movie.service';
+import { MovieCardComponent } from "../../components/movie-card/movie-card.component";
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [CommonModule, IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent],
+  imports: [CommonModule, IsLoggedHeaderComponent, IsUnLoggedHeaderComponent, FooterComponent, MovieCardComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss'
 })
@@ -28,24 +31,31 @@ export class ProfilePageComponent {
 		avatarUrl: '../../../../assets/img/header/avatar.png',
 	 };
 	 
-	 watchlist = ["ddd"]; 
-	 favorite = ["aaa"]; 
-	 watched = ["fff"];
+watchlist: Movie[] = [];
+favorite: Movie[] = [];
+watched: Movie[] = [];
 	 
 	 activeTab = 'watchlist';
 
-	   constructor(private authService: AuthService ) {}
+	   constructor(private movieService: MovieService, private authService: AuthService ) {}
 	 
 	 setTab(tab: 'watchlist' | 'watched' | 'favorite') {
 		this.activeTab = tab;
 	 }
 
-	 ngOnInit() {
-		this.authService.loggedIn$.subscribe((status) => {
-		  this.isLoggedIn = status;
-		});
+
+ngOnInit() {
+  this.authService.loggedIn$.subscribe(status => this.isLoggedIn = status);
+  this.watchlist = this.movieService.getWatchLater();
+  this.favorite = this.movieService.getFavorites();
+  this.watched = this.movieService.getWatched();
 }
 
-
+removeMovie(type: 'watch' | 'favorite' | 'watched', id: number) {
+  this.movieService.removeFromList(type, id);
+  this.watchlist = this.movieService.getWatchLater();
+  this.favorite = this.movieService.getFavorites();
+  this.watched = this.movieService.getWatched();
+}
 
 }
