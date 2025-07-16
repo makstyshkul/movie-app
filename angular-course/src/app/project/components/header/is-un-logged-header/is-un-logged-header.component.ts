@@ -16,6 +16,8 @@ import { Router, RouterModule } from '@angular/router';
 export class IsUnLoggedHeaderComponent {
   showLogin = false;
   showRegister = false;
+  isLoggedIn: boolean = false;
+
 
   constructor(private router: Router) {}
 
@@ -51,5 +53,13 @@ export class IsUnLoggedHeaderComponent {
 
   navigateToMovies() {
 	this.router.navigate(['/movies']);
+ }
+
+ navigateToTop() {
+	this.router.navigate(['/top']);
+ }
+
+ navigateToRecommended() {
+	this.router.navigate(['/recommended']);
  }
 }

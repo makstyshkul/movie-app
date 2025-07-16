@@ -275,7 +275,8 @@ export const popularMovies = [
     "title": "Inside Out 2",
     "video": "https://www.youtube.com/watch?v=LEjhY15eCx0",
     "vote_average": 7.818,
-    "vote_count": 233
+    "vote_count": 233,
+	 "genre_name": "Drama"
   },
   {
     "adult": false,
@@ -295,7 +296,8 @@ export const popularMovies = [
     "title": "Kingdom of the Planet of the Apes",
 	 "video": "https://www.youtube.com/watch?v=Kdr5oedn7q8",
     "vote_average": 6.842,
-    "vote_count": 1090
+    "vote_count": 1090,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -316,7 +318,8 @@ export const popularMovies = [
     "title": "Under Paris",
     "video": "https://www.youtube.com/watch?v=HPfkQ9gMLMY&ab_channel=NetflixFrance",
     "vote_average": 5.838,
-    "vote_count": 542
+    "vote_count": 542,
+	 "genre_name": "Horror"
   },
   {
     "adult": false,
@@ -337,7 +340,8 @@ export const popularMovies = [
     "title": "Bad Boys: Ride or Die",
     "video": "https://www.youtube.com/watch?v=ZTQyMmz-cQE",
     "vote_average": 7.1,
-    "vote_count": 312
+    "vote_count": 312,
+	 "genre_name": "Drama"
   },
   {
     "adult": false,
@@ -359,7 +363,8 @@ export const popularMovies = [
     "title": "Inside Out",
     "video": "https://www.youtube.com/watch?v=J4_8jijwNs0",
     "vote_average": 7.916,
-    "vote_count": 20603
+    "vote_count": 20603,
+	 "genre_name": "Drama"
   },
   {
     "adult": false,
@@ -379,7 +384,8 @@ export const popularMovies = [
     "title": "Godzilla x Kong: The New Empire",
     "video": "https://www.youtube.com/watch?v=qqrpMRDuPfc",
     "vote_average": 7.218,
-    "vote_count": 2804
+    "vote_count": 2804,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -399,7 +405,8 @@ export const popularMovies = [
     "title": "Civil War",
     "video": "https://www.youtube.com/watch?v=aDyQxtg0V2w",
     "vote_average": 7.02,
-    "vote_count": 1587
+    "vote_count": 1587,
+	 "genre_name": "Action"
   },
   {
     "adult": false,
@@ -420,7 +427,8 @@ export const popularMovies = [
     "title": "The Roundup: No Way Out",
     "video": "https://www.youtube.com/watch?v=iD-_kZe6eIY&pp=0gcJCdgAo7VqN5tD",
     "vote_average": 7.123,
-    "vote_count": 272
+    "vote_count": 272,
+	 "genre_name": "Action"
   },
 ]
 

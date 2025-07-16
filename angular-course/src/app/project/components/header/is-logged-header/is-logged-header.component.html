@@ -19,8 +19,11 @@
 				Selections
 			</li>
 			<li class="list__item" (click)="navigateToCommunity()">Community</li>
-			<li class="list__item">
+			<li class="list__item" (click)="navigateToTop()">
 				TOP 100
+			</li>
+			<li class="list__item" (click)="navigateToRecommended()">
+				Recommended
 			</li>
 		</ul>
 	</div>
@@ -47,7 +50,7 @@
 		<div class="user-avatar" (click)="onAvatarClick($event)">
 			<img src="../../../../../assets/img/header/avatar.png" alt="User Avatar" />
 			<div class="dropdown-menu" *ngIf="isDropdownVisible">
-			  <a routerLink="/profile">Profile</a>
+			  <a routerLink="/profile" (click)="navigateToProfile()">Profile</a>
 			  <a routerLink="/settings">Settings</a>
 			  <a href="#" (click)="logout(); $event.preventDefault()">Logout</a>
 			</div>

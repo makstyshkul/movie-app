@@ -26,16 +26,20 @@
 		  <span class="rating">+ {{ movie.vote_average.toFixed(0) }}</span>
 		  <p>{{ movie.release_date | date:'yyyy' }}</p>
 		</div>
-		<button
-  class="subscribe-button"
-  (click)="toggleSubscription(movie.id)"
->
-  {{ subscribedMovies.has(movie.id) ? 'Subscribed' : 'Subscribe' }}
-</button>	
+		<button class="subscribe-button" (click)="handleSubscription(movie)">
+			{{ isLoggedIn ? (subscribedMovies.has(movie.id) ? 'Subscribed' : 'Subscribe') : 'Subscribe' }}
+		 </button>	
 	 </div>
 	  </div>
 	</div>
+
+	 <app-login-popup
+  *ngIf="showLogin"
+  (closed)="closeLogin()"
+  (loggedIn)="handleLoggedIn($event)">
+</app-login-popup>
  
 	<app-footer></app-footer>
  </ng-container>
+ 
  

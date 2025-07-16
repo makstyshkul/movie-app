@@ -22,7 +22,6 @@ type RegisterForm = {
 export class SignupPopupComponent {
 	@Output() closed = new EventEmitter<void>();
   @Output() registered = new EventEmitter<{ name: string; email: string; password: string }>();
-
   registerForm: FormGroup<RegisterForm>;
 
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
@@ -33,30 +32,24 @@ export class SignupPopupComponent {
       confirmPassword: this.fb.control('', { nonNullable: true, validators: [Validators.required] }),
     });
   }
-
   close() {
     this.closed.emit();
   }
-
   submit() {
 	if (this.registerForm.invalid) {
 	  this.registerForm.markAllAsTouched();
 	  return;
 	}
- 
 	const { password, confirmPassword, name, email } = this.registerForm.getRawValue();
- 
 	if (password !== confirmPassword) {
 	  this.registerForm.get('confirmPassword')?.setErrors({ mismatch: true });
 	  return;
 	}
- 
 	const fakeToken = 'mock-token'; 
 	this.authService.register(fakeToken);  
 	this.router.navigate(['/home']);
 	this.close();
  }
-
   logout() {
 	this.authService.logout();
 	this.router.navigate(['/home']);

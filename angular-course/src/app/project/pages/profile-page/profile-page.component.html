@@ -1,0 +1,62 @@
+
+<ng-container class="container">
+	<app-is-logged-header
+	*ngIf="isLoggedIn"
+ ></app-is-logged-header>
+ 	<app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
+
+
+<div class="profile-wrapper">
+	<h2 class="profile-title">Profile</h2>
+ 
+	<div class="profile-card">
+	  <div class="profile-tabs">
+		 <div class="tab" [class.active]="activeTab === 'watchlist'" (click)="setTab('watchlist')">
+			Watch Later
+			<span class="tab-count">{{ watchlist.length }}</span>
+		 </div>
+		 <div class="tab" [class.active]="activeTab === 'favorite'" (click)="setTab('favorite')">
+			Favorite
+			<span class="tab-count">{{ watchlist.length }}</span>
+		 </div>
+		 <div class="tab" [class.active]="activeTab === 'watched'" (click)="setTab('watched')">
+			Watched
+			<span class="tab-count">{{ watched.length }}</span>
+		 </div>
+	  </div>
+ 
+	  <div class="profile-main">
+		 <img class="profile-avatar" [src]="user.avatarUrl" alt="avatar" />
+		 <div class="profile-info">
+			<h3 class="profile-name">{{ user.name }}</h3>
+			<p class="profile-group">Group: {{ user.group }}</p>
+			<div class="profile-stats">
+			  <span>Rating: {{ user.rating }}</span>
+			  <span>Comments: {{ user.comments }}</span>
+			</div>
+			<span class="status online">Online</span>
+		 </div>
+	  </div>
+ 
+	  <div class="profile-footer">
+		 <p>About: <strong>{{ user.about || '-' }}</strong></p>
+		 <button class="btn edit-btn">Change profile</button>
+	  </div>
+	</div>
+ </div>
+
+ <div class="movie-list">
+  <div *ngIf="activeTab === 'watchlist'">
+    <app-movie-card *ngFor="let movie of watchlist" [movie]="movie" (click)="removeMovie('watch', movie.id)"/>
+  </div>
+  <div *ngIf="activeTab === 'favorite'">
+    <app-movie-card *ngFor="let movie of favorite" [movie]="movie" (click)="removeMovie('favorite', movie.id)"/>
+  </div>
+  <div *ngIf="activeTab === 'watched'">
+    <app-movie-card *ngFor="let movie of watched" [movie]="movie" (click)="removeMovie('watched', movie.id)"/>
+	 
+  </div>
+</div>
+ 
+ 	<app-footer></app-footer>
+ </ng-container>

@@ -142,3 +142,27 @@
 	margin-right: 10px;
  }
  
+
+ .load-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-more-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.load-more-btn:hover {
+  background: #444;
+}
+
+.movie-card {
+  cursor: pointer;
+}

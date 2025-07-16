@@ -6,6 +6,7 @@
 	  { breakpoint: '768px', numVisible: 2, numScroll: 1 },
 	  { breakpoint: '480px', numVisible: 1, numScroll: 1 }
 	]">
+	
 	  <ng-template pTemplate="item" let-movie>
 		 <div class="movie-card" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w400' + movie.poster_path + ')'}">
 			<h3>{{ movie.title }}</h3>

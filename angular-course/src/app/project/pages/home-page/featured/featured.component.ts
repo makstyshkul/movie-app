@@ -16,4 +16,8 @@ export class FeaturedComponent {
 
 	movies = topRatedMovies;
 
+	addToWatchlist(movie: any) {
+		// this.watchlistService.add(movie);
+	}
+
 }
