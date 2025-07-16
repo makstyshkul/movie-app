@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm install && npx ng build --configuration=production",
-  "outputDirectory": "dist/angular-course",
+  "outputDirectory": "dist/movie-app",
   "framework": null
 }
