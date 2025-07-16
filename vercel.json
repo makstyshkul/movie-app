@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm install -g @angular/cli && ng build --configuration=production",
+  "buildCommand": "npm install && npx ng build --configuration=production",
   "outputDirectory": "dist/angular-course",
   "framework": null
 }
