@@ -8,17 +8,13 @@ import { environment } from '../enviroment';
   providedIn: 'root'
 })
 export class MovieService {
-
-
 	private watchLaterList: Movie[] = [];
-  private watchedList: Movie[] = [];
-  private likedList: Movie[] = [];
+	private watchedList: Movie[] = [];
+	private likedList: Movie[] = [];
+	private apiKey = environment.TMDB_API_KEY;
+	private baseUrl = environment.TMDB_BASE_URL;
 
-
-  private apiKey = environment.TMDB_API_KEY;
-  private baseUrl = environment.TMDB_BASE_URL;
-
-  constructor(private http: HttpClient) {} 
+	constructor(private http: HttpClient) {} 
 
  getMovieDetails(id: number): Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&language=en-US`);
@@ -28,7 +24,6 @@ export class MovieService {
     return this.http.get<any>(`${this.baseUrl}/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`);
   }
 
-
 getLikedMap(): { [key: number]: boolean } {
   const data = localStorage.getItem('liked');
   return data ? JSON.parse(data) : {};
@@ -37,7 +32,6 @@ getLikedMap(): { [key: number]: boolean } {
 isMovieLiked(movieId: number): boolean {
   return this.getLikedMap()[movieId] === true;
 }
-
 
 getNowPlayingMovies(page: number = 1): Observable<any> {
   return this.http.get<any>(
@@ -49,18 +43,15 @@ getGenres(): Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}&language=en-US`);
 }
 
-
-  getWatchLater() {
-    return this.watchLaterList;
-  }
-
-  getWatched() {
-    return this.watchedList;
-  }
-
-  getFavorites() {
-    return this.likedList;
-  }
+getWatchLater() {
+	return this.watchLaterList;
+}
+getWatched() {
+	return this.watchedList;
+}
+getFavorites() {
+	return this.likedList;
+}
 
   addToWatchLater(movie: Movie) {
     if (!this.watchLaterList.find(m => m.id === movie.id)) {

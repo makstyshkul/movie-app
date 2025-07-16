@@ -37,20 +37,20 @@ export class RecommendedPageComponent implements OnInit {
     private authService: AuthService
   ) {}
 
- ngOnInit(): void {
-  this.authService.loggedIn$.pipe(take(1)).subscribe((status) => {
-    this.isLoggedIn = status;
+ngOnInit(): void {
+	this.authService.loggedIn$.pipe(take(1)).subscribe((status) => {
+	this.isLoggedIn = status;
 
-    if (status) {
+	if (status) {
       this.userMovies = [
-        ...this.userService.getFavorites(),
-        ...this.userService.getWatched()
+		...this.userService.getFavorites(),
+		...this.userService.getWatched()
       ];
       this.loadRecommendations();
-    } else {
+	} else {
       this.loadPopular();
-    }
-  });
+	}
+	});
 }
 
   loadPopular(): void {
@@ -75,8 +75,8 @@ export class RecommendedPageComponent implements OnInit {
     });
   }
 
-  loadMore(): void {
-    this.currentPage++;
-    this.isLoggedIn ? this.loadRecommendations() : this.loadPopular();
-  }
+loadMore(): void {
+   this.currentPage++;
+   this.isLoggedIn ? this.loadRecommendations() : this.loadPopular();
+}
 }

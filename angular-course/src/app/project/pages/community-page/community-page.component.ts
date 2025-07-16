@@ -36,13 +36,13 @@ export class CommunityPageComponent implements OnInit {
     }
   }
 
-  handleSubscription(movie: { id: number; title: string }) {
-    if (!this.isLoggedIn) {
+handleSubscription(movie: { id: number; title: string }) {
+	if (!this.isLoggedIn) {
       this.openLogin();
       return;
-    }
-    this.toggleSubscription(movie.id);
-  }
+	}
+		this.toggleSubscription(movie.id);
+	}
 
   get subscriptionCount(): number {
     return this.subscribedMovies.size;

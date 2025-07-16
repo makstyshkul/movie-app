@@ -97,13 +97,14 @@ export class MoviesPageComponent implements OnInit {
     });
   }
 
-  loadMore() {
-    this.currentPage++;
-    this.loadMovies();
-  }
+loadMore() {
+	this.currentPage++;
+	this.loadMovies();
+}
 
-  filterMovies(updateUrl = true) {
-    this.filteredMovies = this.movies.filter((movie) => {
+  
+filterMovies(updateUrl = true) {
+	this.filteredMovies = this.movies.filter((movie) => {
       const movieYear = movie.release_date?.slice(0, 4);
       const rating = movie.vote_average;
       const titleMatch = movie.title.toLowerCase().includes(this.searchTerm.toLowerCase());
@@ -112,33 +113,33 @@ export class MoviesPageComponent implements OnInit {
       const ratingMatch = this.selectedRating ? rating >= +this.selectedRating : true;
 
       return titleMatch && genreMatch && yearMatch && ratingMatch;
-    });
+	});
 
-    if (updateUrl) {
+	if (updateUrl) {
       this.router.navigate([], {
-        relativeTo: this.route,
-        queryParams: {
-          genre: this.selectedGenre || null,
-          year: this.selectedYear || null,
-          rating: this.selectedRating || null,
-          search: this.searchTerm || null
-        },
-        queryParamsHandling: 'merge'
+			relativeTo: this.route,
+			queryParams: {
+			genre: this.selectedGenre || null,
+			year: this.selectedYear || null,
+			rating: this.selectedRating || null,
+			search: this.searchTerm || null
+			},
+			queryParamsHandling: 'merge'
       });
-    }
-  }
+	}
+	}
 
-  clearFilters() {
-    this.selectedGenre = '';
-    this.selectedYear = '';
-    this.selectedRating = '';
-    this.searchTerm = '';
-    this.filterMovies();
-  }
+	clearFilters() {
+		this.selectedGenre = '';
+		this.selectedYear = '';
+		this.selectedRating = '';
+		this.searchTerm = '';
+		this.filterMovies();
+}
 
 
    goToMovie(movieId: number) {
-    this.router.navigate(['/movie', movieId]);
-  }
+		this.router.navigate(['/movie', movieId]);
+	}
 }
 

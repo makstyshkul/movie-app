@@ -3,20 +3,20 @@
   <app-is-logged-header *ngIf="isLoggedIn"></app-is-logged-header>
   <app-is-un-logged-header *ngIf="!isLoggedIn"></app-is-un-logged-header>
 
-  <div class="recommended-page">
-    <h2>Recommended for You</h2>
+	<div class="recommended-page">
+	<h2>Recommended for You</h2>
 
-    <div class="movie-list">
+	<div class="movie-list">
       <app-movie-card
         *ngFor="let movie of recommendedMovies"
-        [movie]="movie">
+			[movie]="movie">
       </app-movie-card>
-    </div>
+		</div>
 
     <button class="load-more" *ngIf="hasMore" (click)="loadMore()">
       Load More
-    </button>
-  </div>
+   </button>
+	</div>
 
   <app-footer></app-footer>
 </ng-container>

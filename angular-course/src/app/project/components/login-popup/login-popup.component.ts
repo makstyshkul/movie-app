@@ -33,20 +33,20 @@ export class LoginPopupComponent {
     this.closed.emit();
   }
 
-  submit() {
-	if (this.loginForm.valid) {
-	  const { email, password } = this.loginForm.getRawValue();
- 
-	  const fakeToken = 'mock-token';
- 
-	  this.authService.login(fakeToken);  
-	  this.loggedIn.emit({ email, password });
-	  this.close();
-	  this.router.navigate(['/home']);
+submit() {
+if (this.loginForm.valid) {
+const { email, password } = this.loginForm.getRawValue();
+
+const fakeToken = 'mock-token';
+
+this.authService.login(fakeToken);  
+this.loggedIn.emit({ email, password });
+this.close();
+this.router.navigate(['/home']);
 	} else {
-	  this.loginForm.markAllAsTouched();
+this.loginForm.markAllAsTouched();
 	}
- }
+}
 
  logout() {
 	this.authService.logout();

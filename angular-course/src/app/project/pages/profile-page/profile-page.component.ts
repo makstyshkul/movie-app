@@ -46,9 +46,9 @@ watched: Movie[] = [];
 
 ngOnInit() {
   this.authService.loggedIn$.subscribe(status => this.isLoggedIn = status);
-  this.watchlist = this.movieService.getWatchLater();
-  this.favorite = this.movieService.getFavorites();
-  this.watched = this.movieService.getWatched();
+	this.watchlist = this.movieService.getWatchLater();
+	this.favorite = this.movieService.getFavorites();
+	this.watched = this.movieService.getWatched();
 }
 
 removeMovie(listType: 'watch' | 'favorite' | 'watched', movieId: number): void {

@@ -57,22 +57,21 @@ export class MoviePageComponent implements OnInit {
   }
 
 
-  addToWatchLater() {
-  if (this.movie) {
-    this.movieService.addToWatchLater(this.movie);
-  }
+addToWatchLater() {
+	if (this.movie) {
+		this.movieService.addToWatchLater(this.movie);
+	}
 }
-
 markAsWatched() {
-  if (this.movie) {
-    this.movieService.markAsWatched(this.movie);
-  }
+	if (this.movie) {
+		this.movieService.markAsWatched(this.movie);
+	}
 }
 
 toggleLike() {
-  this.liked = !this.liked;
-  if (this.movie) {
-    this.movieService.setLiked(this.movie.id, this.liked, this.movie);
-  }
+	this.liked = !this.liked;
+	if (this.movie) {
+		this.movieService.setLiked(this.movie.id, this.liked, this.movie);
+	}
 }
 }
